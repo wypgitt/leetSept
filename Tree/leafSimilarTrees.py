@@ -38,7 +38,8 @@ class Solution:
                 yield from dfs(node.left)
                 yield from dfs(node.right)
 
-        return list(dfs(root1)) == list(dfs(root2))   
+        return list(dfs(root1)) == list(dfs(root2))  
+    # Time complexity: O(m + n), m, n are the depths of root1 and root2 
     
     # using stack and iterative
     def leafSimilar2(self, root1, root2):

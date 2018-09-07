@@ -31,3 +31,5 @@ class Solution(object):
         """
 
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1 if root else 0
+
+        #Time complexity: O(H), H is the depth

@@ -35,5 +35,6 @@ class Solution(object):
         """
         return 1 + max([self.maxDepth1(n) for n in root.children] + [0]) if root else 0
         
+        # Time complexity: O(n), n is the children
 
     

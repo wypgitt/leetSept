@@ -44,6 +44,8 @@ class Solution(object):
         ans.right = self.mergeTrees(t1 and t1.right, t2 and t2.right)
         
         return ans
+        #Time complexity: O(n). 
+        #Space complexity: O(n)
 
         
 

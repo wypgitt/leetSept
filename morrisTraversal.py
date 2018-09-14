@@ -56,7 +56,7 @@ def MorrisTraversal(root):
             # original tree i.e., fix the right child of predecssor 
             else: 
                 pre.right = None
-                print(current.data) , 
+                print   (current.data) , 
                 current = current.right 
               
 # Driver program to test above function 

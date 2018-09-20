@@ -23,28 +23,33 @@ class Solution(object):
         :rtype: ListNode
         """
 
+        '''
+        return self.reverse(head)
 
+    def reverse(self, head, pre = None):
+        if not head:
+            return pre
+        node = head.next
+        head.next = pre
+        return self.reverse(node, head)
+        '''
+
+        '''
         pre = None
         while head:
-            curr = head
+            cur = head
             head = head.next
-            curr.next = pre
-            pre = curr
+            cur.next = pre
+            pre = cur
         return pre
+        '''
 
-
-
-# recursive:
-    def reverseList1(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        return self.reverse(head)
-        
-    def reverse(self, node, prev = None):
-        if not node:
-            return prev
-        n = node.next
-        node.next = prev
-        return self.reverse(n, node)
+        pre = None
+        cur = head
+        while cur:
+            tmp = cur
+            cur = cur.next
+            tmp.next = pre
+            pre = tmp
+        return pre 
+            

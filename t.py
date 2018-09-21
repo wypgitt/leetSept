@@ -24,3 +24,5 @@ s = "()()"
 level = {s}
 valids = set(filter(is_valid, level))
 print(valids)
+
+questions: python's operators, ex: ^

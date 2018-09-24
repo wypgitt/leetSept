@@ -24,6 +24,7 @@ class Solution(object):
         '''
         m, n = len(grid), len(grid[0])
         dp = [[float('inf')]*n for _ in range(m)]
+        pi = [[0]*n for _ in range(m)]
         if not grid:
             return 0
         for i in range(m):
@@ -34,10 +35,28 @@ class Solution(object):
                     continue
                 if i > 0:
                     tmp= min(tmp, dp[i - 1][j])
+                    if tmp == dp[i - 1][j]:
+                        pi[i][j] = 1
+                    
                 if j > 0:
                     tmp = min(tmp, dp[i][j - 1])
+                    if tmp == dp[i][j - 1]:
+                        pi[i][j] = 0
                 
                 dp[i][j] = tmp + grid[i][j]
+                
+        path = [0]*(m + n - 1)
+        x, y = m - 1, n - 1
+        for p in range(m + n - 1):
+            path[p] = grid[x][y]
+            if pi[x][y] == 0:
+                x -= 1
+            else:
+                y -= 1
+        
+        for p in range(m + n - 2, -1, -1):
+            print(path[p])
+        
         return dp[m - 1][n - 1]        
         '''
         '''
@@ -79,3 +98,4 @@ class Solution(object):
                 
                 dp[new][j] = tmp + grid[i][j]
         return dp[new][n - 1]  
+  

@@ -24,5 +24,5 @@ s = "()()"
 level = {s}
 valids = set(filter(is_valid, level))
 print(valids)
-
+question: what is bisect.bisect([], num, i)
 questions: python's operators, ex: ^

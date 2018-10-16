@@ -48,3 +48,13 @@ class Solution(object):
             ans = [l[:i] + [num] + l[i:] for l in ans for i in range(len(l) + 1)]
         return ans
 	'''
+
+        ans = [[]]
+        
+        for num in nums:
+            temp = []
+            for a in ans:
+                for i in range(len(a) + 1):
+                    temp.append(a[:i] + [num] + a[i:])
+            ans = temp
+        return ans
